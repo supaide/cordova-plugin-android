@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>速派得同城快运</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="static/css/common.css">
+    <link rel="stylesheet" href="static/css/spdico.css">
+    <script type="text/javascript" src="static/js/lib/zepto.min.js"></script>
+    <script>
+      var BROWSER_TYPE = 'app';
+    </script>
+    <script type="text/javascript" src="static/js/lib/common.js"></script>
+    <script type="text/javascript" src="static/js/lib/cordova/cordova.js"></script>
+  </head>
+  <body ontouchstart="">
+    <div id="app"></div>
+    <script>
+      //if(typeof Promise === 'undefined') {
+        APP.addScript('static/js/lib/es6-promise.min.js', function() {
+          ES6Promise.polyfill();
+        });
+      //}
+      if(typeof fetch === 'undefined') {
+        APP.addScript('static/js/lib/fetch.min.js');
+      }
+    </script>
+    <script>
+      APP.ready(function(){
+        APP.addScript('dist/app.js');
+      });
+    </script>
+  </body>
+</html>
